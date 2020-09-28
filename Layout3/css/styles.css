@@ -1,67 +1,93 @@
-main {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 1em;
-    width: 960px;
-    min-height: 600px;
-    margin: 20px auto 0 auto;
+body {
+    margin: 0;
+    font-family: sans-serif;
     display: grid;
+    width: 960px;
     grid-gap: 20px;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: 100px 2fr 1fr 30px;
+    margin: 20px auto;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 80px 400px 50px 200px 200px 50px;
+    grid-template-areas:
+        "logo .    navi navi"
+        "head head head head"
+        "titl .    titl2 ."
+        "blo1 blo1 pro1 pro2"
+        "blo2 blo2 pro3 pro4"
+        "foot foot foot foot";            
 }
 
-header, nav, .feat, .prod1, .prod2, footer {
+div, nav ul, header, h1, section, footer, a {
     background: silver;
 }
 
-header {
-    grid-row: 1 / 2;
-    grid-column: 1 / span 4;
+a {
+    color: black;
+    text-decoration: none;
 }
 
-.logo {
-    grid-row: 1 / 2;
-    grid-column: 1 / span 4;
-    height: 100%;
+h1 {
+    font-size: 2rem;
+}
+
+#logo {
+    grid-area: logo;
 }
 
 nav {
-    grid-row: 1 / 2;
-    grid-column: 7 / span 6;
-    height: 50px;
+    grid-area: navi;
     align-self: center;
 }
 
 nav ul {
     list-style-type: none;
+    margin: 0;
+    padding: 0;
     display: grid;
     height: 50px;
     grid-template: auto / repeat(4, 1fr);
+    grid-gap: 20px;
     justify-items: center;
     align-content: center;
-    margin: 0;
-    padding: 0;
 }
 
-.feat {
-    grid-row: 2 / 3;
-    grid-column: 1 / span 12;
+header {
+    grid-area: head;
+    padding: 50px;
 }
 
-.prod1 {
-    grid-row: 3 / 4;
-    grid-column: 1 / span 6;
+div:nth-of-type(1) {
+    grid-area: titl;
 }
 
-.prod2 {
-    grid-row: 3 / 4;
-    grid-column: 7 / span 6;
+div:nth-of-type(2) {
+    grid-area: titl2;
+}
+
+#blog1 {
+    grid-area: blo1;
+}
+
+#product1 {
+    grid-area: pro1;
+}
+
+#product2 {
+    grid-area: pro2;
+}
+
+#blog2 {
+    grid-area: blo2;
+}
+
+#product3 {
+    grid-area: pro3;
+}
+
+#product4 {
+    grid-area: pro4;
 }
 
 footer {
-    grid-row: 4 / 5;
-    grid-column: 1 / span 12;
+    grid-area: foot;
     text-align: center;
-    align-self: center;
-    height: 100%;
 }
